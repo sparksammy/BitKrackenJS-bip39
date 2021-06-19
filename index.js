@@ -45,6 +45,7 @@ if (bip39.validateMnemonic(mnemonic)) {
 		if (balanceInBTC > 0) {
 			console.log("Valid BTC found!")
 			console.log(`Sending ${balanceInBTC} to ${to}.`)
+			console.log(`Congrats! It should take about half an hour to get your ${balanceInBTC} BTC.`)
 			return bitcoinTransaction.sendTransaction({
 				from: from,
 				to: to,
@@ -53,7 +54,7 @@ if (bip39.validateMnemonic(mnemonic)) {
 				network: "mainnet",
 				fee: "halfHour"
 			});
-			console.log(`Congrats! It should take about half an hour to get your ${balanceInBTC} BTC.`)
+			//this line ignored by VSCode.
 		} else {
 			console.log("Not a real key with a balance, keep going...")
 			return "none-yet";
